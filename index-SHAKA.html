@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client-side Multi View</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <script src="app-SHAKAPLAYER.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.12.6/shaka-player.compiled.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/eme-encryption-scheme-polyfill@2.0.4/dist/eme-encryption-scheme-polyfill.js"></script>
+</head>
+<body>
+  <header>CLIENT-SIDE MULTI-VIEW APP</header>
+  <div class="container">
+    <div class="video-container">
+      <div class="top-bar-column asset-col">
+        <div class="drop-down-list">
+            <select name="dropdownA" id="dropdownA"> <!-- dropdownA -->
+              <option value="https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd">Big Buck Bunny DASH</option>
+              <option value="https://storage.googleapis.com/wvmedia/cenc/h264/tears/tears_hd.mpd">Encrypted Stream</option>
+              <option value="https://storage.googleapis.com/shaka-demo-assets/bbb-dark-truths-hls/hls.m3u8">HLS Stream</option>
+              <option value="https://livesim2.dashif.org/livesim2/chunkdur_1/ato_7/testpic4_8s/Manifest300.mpd">Live Video</option>
+              <option value="https://storage.googleapis.com/shaka-demo-assets/sintel-mp4-only/dash.mpd">4K Video</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/multiview/1/main.m3u8">HLS_H265-HEVC_AAC_WebVTT_20min_1080p-2160p</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/multiview/5/main.m3u8">HLS_H264-AVC_AAC_WebVTT_20min_360p-480p-720p-1080p</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/multiview/6/main.m3u8">HLS_H264-AVC_DolbyDigitalPlus_WebVTT_20min_360p-480p-720p-1080p</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/multiview/7/main.m3u8">HLS_H265-HEVC_DolbyDigitalPlus_WebVTT_20min_1080p-2160p</option>
+            </select>
+        </div>
+      </div>
+      <!-- Video -->
+      <video id="videoA" class="video-player-a" controls>
+          <source src="placeholder.mp4" type="video/ave">
+      </video>
+
+    </div>
+    <div class="video-container">
+      <div class="top-bar-column">
+        <div class="drop-down-list">
+            <select name="dropdownB" id="dropdownB"> <!-- dropdownB -->
+              <option value="https://storage.googleapis.com/shaka-demo-assets/sintel-mp4-only/dash.mpd">4K Video</option>
+              <option value="https://devstreaming-cdn.apple.com/videos/streaming/examples/adv_dv_atmos/main.m3u8">HLS UHD</option>
+              <option value="https://storage.googleapis.com/shaka-demo-assets/angel-one-widevine-hls/hls.m3u8">HLS Encrypted</option>
+              <option value="https://livesim2.dashif.org/livesim2/chunkdur_1/ato_7/testpic4_8s/Manifest300.mpd">Live Video</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/multiview/testing/main.mpd">DASH_H264-AVC_AAC_TTML_20min_360p-480p-720p-1080p</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/multiview/2/main.mpd">DASH_H264-AVC_DolbyDigitalPlus_TTML_20min_360p-480p-720p-1080p</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/multiview/3/main.mpd">DASH_H265-HEVC_AAC_TTML_20min_1080p-2160p</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/public/aamptest/streams/multiview/4/main.mpd">DASH_H265-HEVC_DolbyDigitalPlus_TTML_20min_1080p-2160p</option>
+            </select>
+        </div>
+      </div>
+      <!-- Video -->
+      <video id="videoB" class="video-player-b" pip="true" controls>
+        <source src="placeholder.mp4" type="video/ave">
+      </video>
+    </div>
+  </div>
+</body>
+</html>
+

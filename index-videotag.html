@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Client-side Multi View</title>
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
+  <script src="app-videotag.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/4.12.6/shaka-player.compiled.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/eme-encryption-scheme-polyfill@2.0.4/dist/eme-encryption-scheme-polyfill.js"></script>
+</head>
+<body>
+  <header>CLIENT-SIDE MULTI-VIEW APP</header>
+  <div class="container">
+    <div class="video-container">
+      <div class="top-bar-column asset-col">
+        <div class="drop-down-list">
+            <select name="dropdownA" id="dropdownA"> <!-- dropdownA -->
+              <option value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4">Big Buck Bunny MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/Multiview/Streams/LG-NASA-HDR.mp4">HDR MP4</option>
+            </select>
+        </div>
+      </div>
+      <!-- Video -->
+      <video id="videoA" class="video-player-a" controls>
+          <source src="placeholder.mp4" type="video/ave">
+      </video>
+
+    </div>
+    <div class="video-container">
+      <div class="top-bar-column">
+        <div class="drop-down-list">
+            <select name="dropdownB" id="dropdownB"> <!-- dropdownB -->
+              <option value="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4">Elephants Dream MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/Multiview/Streams/dolby-vision-art.mp4">Dolby Vision MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/Multiview/Streams/Sintel_1080_10s_30MB.mp4">Video 1080p MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/Multiview/Streams/Big_Buck_Bunny_1080_10s_5MB.webm">VP9 1080p MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/Multiview/Streams/Big_Buck_Bunny_720_10s_2MB.webm">VP9 720p MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/Multiview/Streams/Big_Buck_Bunny_AV1_1080_10s_5MB.mp4">AV1 1080p MP4</option>
+              <option value="https://test-videos.co.uk/vids/bigbuckbunny/mp4/av1/720/Big_Buck_Bunny_720_10s_2MB.mp4">AV1 720p MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/Multiview/Streams/Big_Buck_Bunny_H264_1080_10s_5MB.mp4">H264 1080p MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/Multiview/Streams/Big_Buck_Bunny_H264_720_10s_2MB.mp4">H264 720p MP4</option>
+              <option value="https://cpetestutility.stb.r53.xcal.tv/VideoTestStream/Multiview/Streams/LG-NASA-HDR.mp4">HDR MP4</option>
+            </select>
+        </div>
+      </div>
+      <!-- Video -->
+      <video id="videoB" class="video-player-b" pip="true" controls>
+        <source src="placeholder.mp4" type="video/ave">
+      </video>
+    </div>
+  </div>
+</body>
+</html>
+
