@@ -590,8 +590,25 @@ window.onload = function() {
     dropDownBListVisible = false;
     listAIndex = 0;
     listBIndex = 0;
+    
+    // Setup decrypt-to-host control
+    setupDecryptToHostControl();
+    
     // Focus screen A by default
     addFocus();
 }
 
-
+// Decrypt-to-Host Control Handler
+function setupDecryptToHostControl() {
+    const videoA = document.getElementById('videoA');
+    const videoB = document.getElementById('videoB');
+    
+    // Tile 1 (Screen A): Always use SVP secure memory (decryptToHost = false)
+    // Tile 2 (Screen B): Always use host memory (decryptToHost = true)
+    videoA.decryptToHost = false;
+    videoB.decryptToHost = true;
+    
+    console.log('[v40] Decrypt-to-host control initialized');
+    console.log('[v40] Screen A (Tile 1): decryptToHost = FALSE (SVP secure memory)');
+    console.log('[v40] Screen B (Tile 2): decryptToHost = TRUE (host memory)');
+}
