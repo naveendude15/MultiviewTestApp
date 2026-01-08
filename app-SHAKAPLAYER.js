@@ -276,7 +276,7 @@ function startStreamPlayback(url, multiView, screen) {
             videoA = document.getElementById('videoA');
             videoA.autoplay = true;
             videoA.decryptToHost = false; // Screen A uses SVP secure memory
-            console.log("DEBUG PURPOSE: Screen A decryptToHost set to FALSE (SVP mode)");
+            console.log("[v41-DTH] Screen A: decryptToHost = FALSE (SVP secure memory)");
             //videoA.muted = false;
             console.log(" Loading " + url + " using SHAKA");
 
@@ -342,7 +342,7 @@ function startStreamPlayback(url, multiView, screen) {
 
             videoB.autoplay = true;
             videoB.decryptToHost = true; // Screen B uses host memory to avoid device memory exhaustion
-            console.log("DEBUG PURPOSE: Screen B decryptToHost set to TRUE (host memory mode)");
+            console.log("[v41-DTH] Screen B: decryptToHost = TRUE (host memory mode)");
             //videoB.muted = false;
             console.log("Loading " + url + " using SHAKA");
 
@@ -575,24 +575,6 @@ window.onload = function () {
     listAIndex = 0;
     listBIndex = 0;
 
-    // Setup decrypt-to-host control
-    setupDecryptToHostControl();
-
     // Focus screen A by default
     addFocus();
-}
-
-// Decrypt-to-Host Control Handler
-function setupDecryptToHostControl() {
-    const videoA = document.getElementById('videoA');
-    const videoB = document.getElementById('videoB');
-
-    // Tile 1 (Screen A): Always use SVP secure memory (decryptToHost = false)
-    // Tile 2 (Screen B): Always use host memory (decryptToHost = true)
-    videoA.decryptToHost = false;
-    videoB.decryptToHost = true;
-
-    console.log('[v40] Decrypt-to-host control initialized');
-    console.log('[v40] Screen A (Tile 1): decryptToHost = FALSE (SVP secure memory)');
-    console.log('[v40] Screen B (Tile 2): decryptToHost = TRUE (host memory)');
 }
